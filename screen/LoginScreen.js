@@ -1,14 +1,10 @@
 import React,{useState} from 'react';
-import { StyleSheet, TextInput, View,Button ,Alert} from 'react-native';
+import { StyleSheet, TextInput, View, Button ,Pressable,Text} from 'react-native';
 
 function LoginScreen({ navigation }) {
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
   
-    const onLogin=()=> { 
-     console.log("alert");
-     Alert.alert('Credentials', `${username} + ${password}`);
-    }
     return (
     <View style={styles.container}>
         <TextInput
@@ -24,13 +20,12 @@ function LoginScreen({ navigation }) {
         secureTextEntry={true}
         style={styles.input}
         />
-        
-        <Button
-        title={'Login'}
-        style={styles.input}
-        
-        onPress={() => navigation.navigate('Home')}
-        />
+      
+        <Pressable style={styles.button} onPress={()=>navigation.navigate('Home')}>
+          <Text style={styles.text}>{"LOGIN"}</Text>
+       </Pressable>
+      
+    
     </View>
     );
   }
@@ -44,11 +39,32 @@ function LoginScreen({ navigation }) {
       // backgroundColor: '#ecf0f1',
     },
     input: {
-      width: 200,
-      height: 44,
+      width: '80%',
+      marginLeft:'20%',
+      marginRight:'20%',
+      height: 50,
+      borderRadius:8,
       padding: 10,
       borderWidth: 1,
       borderColor: 'black',
       marginBottom: 10,
+    },
+ 
+    button: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 8,
+      elevation: 3,
+      backgroundColor: 'black',
+      width:'80%'
+    },
+    text: {
+      fontSize: 16,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      letterSpacing: 0.25,
+      color: 'white',
     },
   });
