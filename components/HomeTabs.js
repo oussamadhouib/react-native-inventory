@@ -1,7 +1,15 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import HomeScreen from "../screen/HomeScreen";
+
 function SettingsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -12,9 +20,87 @@ function SettingsScreen() {
 
 function AddPostScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Add Post!</Text>
-    </View>
+    <ScrollView>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 10,
+        }}
+      >
+        <View
+          style={{
+            margin: 10,
+            backgroundColor: "#E5C89A",
+            width: 150,
+            height: 150,
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 10,
+          }}
+        >
+          <Text style={{ color: "black", fontSize: 12 }}>
+            {"Display product photos"}
+          </Text>
+        </View>
+        <TextInput
+          value={"Name"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Model"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Nickname"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+        <TextInput
+          value={"Brand"}
+          placeholder={"Username"}
+          style={styles.input}
+        />
+      </View>
+    </ScrollView>
   );
 }
 
@@ -69,8 +155,8 @@ export function HomeTabs() {
                 source={require("../assets/home.png")}
                 resizeMode="contain"
                 style={{
-                  width: 22,
-                  height: 22,
+                  width: 25,
+                  height: 25,
                   tintColor: focused ? "#E5C89A" : "#748c94",
                 }}
               />
@@ -95,8 +181,8 @@ export function HomeTabs() {
                 source={require("../assets/home.png")}
                 resizeMode="contain"
                 style={{
-                  width: 22,
-                  height: 22,
+                  width: 25,
+                  height: 25,
                   tintColor: focused ? "#E5C89A" : "#748c94",
                 }}
               />
@@ -142,8 +228,8 @@ export function HomeTabs() {
                 source={require("../assets/user-profile.png")}
                 resizeMode="contain"
                 style={{
-                  width: 22,
-                  height: 22,
+                  width: 25,
+                  height: 25,
                   tintColor: focused ? "#E5C89A" : "#748c94",
                 }}
               />
@@ -168,8 +254,8 @@ export function HomeTabs() {
                 source={require("../assets/home.png")}
                 resizeMode="contain"
                 style={{
-                  width: 22,
-                  height: 22,
+                  width: 25,
+                  height: 25,
                   tintColor: focused ? "#E5C89A" : "#748c94",
                 }}
               />
@@ -191,5 +277,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
     elevation: 5,
+  },
+  input: {
+    width: "80%",
+    marginLeft: "20%",
+    marginRight: "20%",
+    height: 50,
+    borderRadius: 8,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "black",
+    marginBottom: 10,
   },
 });
