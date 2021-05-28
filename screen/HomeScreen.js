@@ -40,6 +40,27 @@ function HomeScreen() {
         photo:
           "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
       },
+      {
+        name: "Rolex",
+        model: "Rolex Daytona",
+        ref: "6",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
+      },
+      {
+        name: "Rolex",
+        model: "Rolex Daytona",
+        ref: "7",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
+      },
+      {
+        name: "Rolex",
+        model: "Rolex Daytona",
+        ref: "8",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
+      },
     ],
   };
 
@@ -108,6 +129,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F7F7F7",
-    marginTop: 30,
+    marginTop: 50,
   },
 });

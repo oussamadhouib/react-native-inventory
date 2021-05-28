@@ -1,113 +1,15 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TextInput,
-  ScrollView,
-} from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
+
 import HomeScreen from "../screen/HomeScreen";
+import AddPostScreen from "../screen/AddPostScreen";
+import CategoriesScreen from "../screen/CategoriesScreen";
 
 function SettingsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Settings!</Text>
-    </View>
-  );
-}
-
-function AddPostScreen() {
-  return (
-    <ScrollView>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 10,
-        }}
-      >
-        <View
-          style={{
-            margin: 10,
-            backgroundColor: "#E5C89A",
-            width: 150,
-            height: 150,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 10,
-          }}
-        >
-          <Text style={{ color: "black", fontSize: 12 }}>
-            {"Display product photos"}
-          </Text>
-        </View>
-        <TextInput
-          value={"Name"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Model"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Nickname"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-        <TextInput
-          value={"Brand"}
-          placeholder={"Username"}
-          style={styles.input}
-        />
-      </View>
-    </ScrollView>
-  );
-}
-
-function anotherScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text> another Screen Post!</Text>
     </View>
   );
 }
@@ -152,7 +54,7 @@ export function HomeTabs() {
               }}
             >
               <Image
-                source={require("../assets/home.png")}
+                source={require("../assets/products.png")}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -167,7 +69,7 @@ export function HomeTabs() {
       />
       <Tab.Screen
         name="another"
-        component={anotherScreen}
+        component={CategoriesScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -178,7 +80,7 @@ export function HomeTabs() {
               }}
             >
               <Image
-                source={require("../assets/home.png")}
+                source={require("../assets/categories2.png")}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -203,8 +105,8 @@ export function HomeTabs() {
                 source={require("../assets/plus-circle.png")}
                 resizeMode="contain"
                 style={{
-                  width: 35,
-                  height: 35,
+                  width: 40,
+                  height: 40,
                   tintColor: "#E5C89A",
                 }}
               />
@@ -251,7 +153,7 @@ export function HomeTabs() {
               }}
             >
               <Image
-                source={require("../assets/home.png")}
+                source={require("../assets/settings2.png")}
                 resizeMode="contain"
                 style={{
                   width: 25,
