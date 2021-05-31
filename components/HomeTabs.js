@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import HomeScreen from "../screen/HomeScreen";
 import AddPostScreen from "../screen/AddPostScreen";
@@ -22,7 +22,31 @@ function searchScreen() {
   );
 }
 const Tab = createBottomTabNavigator();
-export function HomeTabs() {
+
+const CustomTabBarButton = ({ children, onPress }) => (
+  <TouchableOpacity
+    style={{
+      top: -25,
+      justifyContent: "center",
+      alignItems: "center",
+      ...styles.shadow,
+    }}
+    onPress={onPress}
+  >
+    <View
+      style={{
+        width: 60,
+        height: 60,
+        borderRadius: 35,
+        backgroundColor: "#E5C89A",
+      }}
+    >
+      {children}
+    </View>
+  </TouchableOpacity>
+);
+
+export function HomeTabs({ navigation }) {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -33,10 +57,11 @@ export function HomeTabs() {
           buttom: 25,
           // left:12,
           // right:12,
+
           elevation: 0,
           backgroundColor: "#ffffff",
           // borderRadius:15,
-          height: 60,
+          height: 90,
           ...styles.shadow,
         },
       }}
@@ -97,23 +122,26 @@ export function HomeTabs() {
         name="AddPost"
         component={AddPostScreen}
         options={{
-          tabBarIcon: () => (
-            <View
-              style={{ alignItems: "center", justifyContent: "center", top: 1 }}
-            >
-              <Image
-                source={require("../assets/plus-circle.png")}
-                resizeMode="contain"
-                style={{
-                  width: 40,
-                  height: 40,
-                  tintColor: "#E5C89A",
-                }}
-              />
-            </View>
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={require("../assets/plus.png")}
+              resizeMode="contain"
+              style={{
+                width: 25,
+                height: 25,
+                tintColor: "#fff",
+              }}
+            />
+          ),
+          tabBarButton: (props) => (
+            <CustomTabBarButton
+              {...props}
+              onPress={() => navigation.navigate("addPost")}
+            />
           ),
         }}
       />
+
       <Tab.Screen
         name="Settings"
         component={SettingsScreen}

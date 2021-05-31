@@ -22,7 +22,7 @@ function AddPostScreen() {
   };
 
   return (
-    <View style={{ flex: 1, marginTop: 50 }}>
+    <View style={{ flex: 1, marginTop: 120 }}>
       <ProgressSteps
         activeStepIconBorderColor="#E5C89A"
         completedProgressBarColor="#E5C89A"
