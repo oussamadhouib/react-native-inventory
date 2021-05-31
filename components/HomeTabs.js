@@ -61,7 +61,7 @@ export function HomeTabs({ navigation }) {
           elevation: 0,
           backgroundColor: "#ffffff",
           // borderRadius:15,
-          height: 90,
+          height: 65,
           ...styles.shadow,
         },
       }}
@@ -75,7 +75,7 @@ export function HomeTabs({ navigation }) {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: 3,
               }}
             >
               <Image
@@ -101,7 +101,7 @@ export function HomeTabs({ navigation }) {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: 3,
               }}
             >
               <Image
@@ -151,7 +151,7 @@ export function HomeTabs({ navigation }) {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: 3,
               }}
             >
               <Image
@@ -177,7 +177,7 @@ export function HomeTabs({ navigation }) {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: 3,
               }}
             >
               <Image

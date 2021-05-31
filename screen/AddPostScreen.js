@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 
 import { ProgressSteps, ProgressStep } from "react-native-progress-steps";
 
@@ -22,7 +29,25 @@ function AddPostScreen() {
   };
 
   return (
-    <View style={{ flex: 1, marginTop: 120 }}>
+    <View style={{ flex: 1, marginTop: 50 }}>
+      <TouchableOpacity
+        style={{
+          width: 30,
+          height: 30,
+          top: 20,
+          margin: 30,
+          marginLeft: 20,
+        }}
+      >
+        <Image
+          source={require("../assets/cross.png")}
+          resizeMode="contain"
+          style={{
+            width: 30,
+            height: 30,
+          }}
+        />
+      </TouchableOpacity>
       <ProgressSteps
         activeStepIconBorderColor="#E5C89A"
         completedProgressBarColor="#E5C89A"
