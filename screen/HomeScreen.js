@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import { Item } from "../components/Item";
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   let state = {
     data: [
       {
@@ -118,7 +118,7 @@ function HomeScreen() {
       <FlatList
         style={{ flex: 1 }}
         data={state.data}
-        renderItem={({ item }) => <Item item={item} />}
+        renderItem={({ item }) => <Item item={item} navigation={navigation} />}
         keyExtractor={(item) => item.ref}
       />
     </View>

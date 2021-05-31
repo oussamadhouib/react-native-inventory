@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity, StyleSheet } from "react-native";
-export function Item({ item }) {
+export function Item({ item, navigation }) {
   return (
     <View style={styles.listItem}>
       <Image
@@ -18,6 +18,7 @@ export function Item({ item }) {
           justifyContent: "center",
           alignItems: "center",
         }}
+        onPress={() => navigation.navigate("viewProduct")}
       >
         <Text style={{ color: "green" }}>View</Text>
       </TouchableOpacity>

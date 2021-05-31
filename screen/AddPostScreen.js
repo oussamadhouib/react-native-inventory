@@ -10,7 +10,7 @@ import {
 
 import { ProgressSteps, ProgressStep } from "react-native-progress-steps";
 
-function AddPostScreen() {
+function AddPostScreen({ navigation }) {
   const onNextStep = () => {
     console.log("called next step");
   };
@@ -29,15 +29,16 @@ function AddPostScreen() {
   };
 
   return (
-    <View style={{ flex: 1, marginTop: 50 }}>
+    <View style={{ flex: 1, marginTop: "13%" }}>
       <TouchableOpacity
         style={{
           width: 30,
           height: 30,
-          top: 20,
+          top: "2%",
           margin: 30,
           marginLeft: 20,
         }}
+        onPress={() => navigation.navigate("Home")}
       >
         <Image
           source={require("../assets/cross.png")}
@@ -123,37 +124,55 @@ function AddPostScreen() {
           </View>
         </ProgressStep>
         <ProgressStep
-          label="Infos"
+          label="Photos"
           onNext={() => onNextStep()}
           onPrevious={() => onPrevStep()}
           nextBtnTextStyle={buttonTextStyle}
           previousBtnTextStyle={buttonTextStyle}
         >
-          <View style={{ alignItems: "center", marginTop: 50 }}>
-            <TextInput
-              //   value={"username"}
-              onChangeText={(e) => console.log(e)}
-              placeholder={"Tittle"}
-              style={styles.input}
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#EFEBEA",
+              marginTop: 50,
+              borderRadius: 35,
+              width: "70%",
+              height: 250,
+              marginLeft: "15%",
+            }}
+          >
+            <Image
+              source={require("../assets/image-upload.png")}
+              resizeMode="contain"
+              style={{
+                width: 35,
+                height: 35,
+                top: -20,
+              }}
             />
-            <TextInput
-              //   value={"username"}
-              onChangeText={(e) => console.log(e)}
-              placeholder={"Tittle"}
-              style={styles.input}
-            />
-            <TextInput
-              //   value={"username"}
-              onChangeText={(e) => console.log(e)}
-              placeholder={"Tittle"}
-              style={styles.input}
-            />
-            <TextInput
-              //   value={"username"}
-              onChangeText={(e) => console.log(e)}
-              placeholder={"Tittle"}
-              style={styles.input}
-            />
+            <Text>Display Photos</Text>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#E5C89A",
+                width: 120,
+                height: 40,
+                borderRadius: 15,
+                top: 25,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text>Browse</Text>
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 10,
+                top: 60,
+              }}
+            >
+              Suports jpg, jpeg, png
+            </Text>
           </View>
         </ProgressStep>
         <ProgressStep
