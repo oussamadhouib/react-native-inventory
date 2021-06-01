@@ -165,14 +165,6 @@ function AddPostScreen({ navigation }) {
             >
               <Text>Browse</Text>
             </TouchableOpacity>
-            <Text
-              style={{
-                fontSize: 10,
-                top: 60,
-              }}
-            >
-              Suports jpg, jpeg, png
-            </Text>
           </View>
         </ProgressStep>
         <ProgressStep

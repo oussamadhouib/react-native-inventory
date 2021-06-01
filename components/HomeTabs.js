@@ -1,6 +1,15 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Animated,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 
 import HomeScreen from "../screen/HomeScreen";
 import AddPostScreen from "../screen/AddPostScreen";
@@ -23,27 +32,109 @@ function searchScreen() {
 }
 const Tab = createBottomTabNavigator();
 
-const CustomTabBarButton = ({ children, onPress }) => (
-  <TouchableOpacity
+let animation = new Animated.Value(0);
+const toggleMenu = () => {
+  const toValue = open ? 0 : 1;
+  Animated.spring(animation, {
+    toValue,
+    friction: 5,
+  }).start();
+  open = !open;
+};
+
+// button rotation
+const rotation = {
+  transform: [
+    {
+      rotate: animation.interpolate({
+        inputRange: [0, 1],
+        outputRange: ["0deg", "45deg"],
+      }),
+    },
+  ],
+};
+const userStyle = {
+  transform: [
+    {
+      scale: animation,
+    },
+    {
+      translateY: animation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, -90],
+      }),
+    },
+  ],
+};
+const shopStyle = {
+  transform: [
+    {
+      scale: animation,
+    },
+    {
+      translateY: animation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, -60],
+      }),
+    },
+    {
+      translateX: animation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [-24, -60],
+      }),
+    },
+  ],
+};
+const categoryStyle = {
+  transform: [
+    {
+      scale: animation,
+    },
+    {
+      translateY: animation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, -60],
+      }),
+    },
+    {
+      translateX: animation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [24, 60],
+      }),
+    },
+  ],
+};
+
+const CustomTabBarButton = ({ navigation }) => (
+  <View
     style={{
-      top: -25,
-      justifyContent: "center",
+      top: -30,
       alignItems: "center",
-      ...styles.shadow,
+      justifyContent: "center",
     }}
-    onPress={onPress}
   >
-    <View
-      style={{
-        width: 60,
-        height: 60,
-        borderRadius: 35,
-        backgroundColor: "#E5C89A",
-      }}
-    >
-      {children}
-    </View>
-  </TouchableOpacity>
+    <TouchableWithoutFeedback>
+      <Animated.View style={[styles.buttom, styles.secondary, categoryStyle]}>
+        <AntDesign name="addfolder" size={20} color="#E5C89A" />
+      </Animated.View>
+    </TouchableWithoutFeedback>
+    <TouchableWithoutFeedback>
+      <Animated.View style={[styles.buttom, styles.secondary, userStyle]}>
+        <AntDesign name="adduser" size={20} color="#E5C89A" />
+      </Animated.View>
+    </TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={() => navigation.navigate("addPost")}>
+      <Animated.View style={[styles.buttom, styles.secondary, shopStyle]}>
+        <Entypo name="shop" size={20} color="#E5C89A" />
+      </Animated.View>
+    </TouchableWithoutFeedback>
+
+    <TouchableWithoutFeedback onPress={() => toggleMenu()}>
+      <Animated.View style={[styles.buttom, styles.menu, rotation]}>
+        <AntDesign name="plus" size={24} color="#fff" />
+      </Animated.View>
+    </TouchableWithoutFeedback>
+  </View>
 );
 
 export function HomeTabs({ navigation }) {
@@ -122,23 +213,7 @@ export function HomeTabs({ navigation }) {
         name="AddPost"
         component={AddPostScreen}
         options={{
-          tabBarIcon: ({ focused }) => (
-            <Image
-              source={require("../assets/plus.png")}
-              resizeMode="contain"
-              style={{
-                width: 25,
-                height: 25,
-                tintColor: "#fff",
-              }}
-            />
-          ),
-          tabBarButton: (props) => (
-            <CustomTabBarButton
-              {...props}
-              onPress={() => navigation.navigate("addPost")}
-            />
-          ),
+          tabBarButton: () => <CustomTabBarButton navigation={navigation} />,
         }}
       />
 
@@ -218,5 +293,24 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "black",
     marginBottom: 10,
+  },
+  buttom: {
+    width: 50,
+    height: 50,
+    borderRadius: 30,
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowRadius: 10,
+    shadowOpacity: 0.3,
+    shadowColor: "#E5C89A",
+    shadowOffset: { height: 10 },
+  },
+  menu: { backgroundColor: "#E5C89A" },
+  secondary: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: "#fff",
   },
 });
