@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import { Item } from "../components/Item";
+import { Featured } from "../components/featured";
 
 function HomeScreen({ navigation }) {
   let state = {
@@ -64,8 +65,53 @@ function HomeScreen({ navigation }) {
     ],
   };
 
+  let state2 = {
+    New_data: [
+      {
+        name: "Rolex",
+        model: "Rolex Daytona",
+        ref: "1",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
+      },
+      {
+        name: "Richard Mille",
+        model: "RM 035",
+        ref: "5",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__image 1-3184.png",
+      },
+      {
+        name: "Rolex",
+        model: "Rolex Daytona",
+        ref: "2",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
+      },
+      {
+        name: "Richard Mille",
+        model: "RM 035",
+        ref: "3",
+        photo:
+          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__image 1-3184.png",
+      },
+    ],
+  };
+
   return (
     <View style={styles.container}>
+      {/* <View>
+        <Text>Newest</Text>
+        <FlatList
+          horizontal={true}
+          style={{ flex: 1 }}
+          data={state2.New_data}
+          renderItem={({ item }) => (
+            <Featured item={item} navigation={navigation} />
+          )}
+          keyExtractor={(item) => item.ref}
+        />
+      </View> */}
       <View
         style={{
           flexDirection: "row",

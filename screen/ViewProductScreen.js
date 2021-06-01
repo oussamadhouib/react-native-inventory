@@ -10,13 +10,22 @@ function ViewProductScreen() {
         }}
         resizeMode="contain"
         style={{
-          width: 200,
-          height: 200,
-          top: -150,
-          borderRadius: 35,
+          width: "60%",
+          height: "35%",
+          top: "-20%",
+          borderRadius: 40,
         }}
       />
-      <Text>Product!</Text>
+      <Text
+        style={{
+          color: "#C67F0F",
+          fontSize: 23,
+          marginLeft: "60%",
+          // marginTop: "-30%",
+        }}
+      >
+        $459,99
+      </Text>
     </View>
   );
 }
