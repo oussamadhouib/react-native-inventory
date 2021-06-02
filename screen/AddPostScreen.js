@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,8 +9,11 @@ import {
 } from "react-native";
 
 import { ProgressSteps, ProgressStep } from "react-native-progress-steps";
+// import { Picker } from "@react-native-picker/picker";
 
 function AddPostScreen({ navigation }) {
+  // const [selectedLanguage, setSelectedLanguage] = useState();
+
   const onNextStep = () => {
     console.log("called next step");
   };
@@ -115,12 +118,14 @@ function AddPostScreen({ navigation }) {
               placeholder={"Tittle"}
               style={styles.input}
             />
-            <TextInput
-              //   value={"username"}
-              onChangeText={(e) => console.log(e)}
-              placeholder={"Tittle"}
-              style={styles.input}
-            />
+            {/* <Picker
+              selectedValue={selectedLanguage}
+              style={styles.select}
+              onValueChange={(itemValue, itemIndex) => console.log(itemValue)}
+            >
+              <Picker.Item label="Java" value="java" />
+              <Picker.Item label="JavaScript" value="js" />
+            </Picker> */}
           </View>
         </ProgressStep>
         <ProgressStep
@@ -193,6 +198,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "black",
     marginBottom: 10,
+  },
+  select: {
+    width: "80%",
+    marginLeft: "20%",
+    marginRight: "20%",
+    height: 50,
+    borderRadius: 8,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "black",
+    marginBottom: 10,
+    backgroundColor: "#fff",
   },
 });
 

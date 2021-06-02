@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import { Item } from "../components/Item";
-import { Featured } from "../components/featured";
+import Header from "../components/Header";
 
 function HomeScreen({ navigation }) {
   let state = {
@@ -100,6 +100,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Header />
       {/* <View>
         <Text>Newest</Text>
         <FlatList
@@ -175,6 +176,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F7F7F7",
-    marginTop: 50,
+    marginTop: 0,
   },
 });
