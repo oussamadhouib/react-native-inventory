@@ -5,7 +5,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import HomeScreen from "../screen/HomeScreen";
 import AddPostScreen from "../screen/AddPostScreen";
 import CategoriesScreen from "../screen/CategoriesScreen";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Feather } from "@expo/vector-icons";
 
 function SettingsScreen() {
   return (
@@ -39,7 +39,7 @@ const CustomTabBarButton = ({ children, onPress }) => (
         width: 60,
         height: 60,
         borderRadius: 35,
-        backgroundColor: "#E5C89A",
+        backgroundColor: "#FF5722",
       }}
     >
       {children}
@@ -79,14 +79,10 @@ export function HomeTabs({ navigation }) {
                 top: 3,
               }}
             >
-              <Image
-                source={require("../assets/products.png")}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#E5C89A" : "#748c94",
-                }}
+              <Feather
+                name="box"
+                size={20}
+                color={focused ? "#FF5722" : "black"}
               />
               <Text style={{ fontSize: 11 }}>{"Products"}</Text>
             </View>
@@ -106,12 +102,12 @@ export function HomeTabs({ navigation }) {
               }}
             >
               <Image
-                source={require("../assets/categories2.png")}
+                source={require("../assets/category-tab.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#E5C89A" : "#748c94",
+                  width: 20,
+                  height: 20,
+                  tintColor: focused ? "#FF5722" : "black",
                 }}
               />
               <Text style={{ fontSize: 11 }}>{"Categories"}</Text>
@@ -147,14 +143,10 @@ export function HomeTabs({ navigation }) {
                 top: 3,
               }}
             >
-              <Image
-                source={require("../assets/user-profile.png")}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#E5C89A" : "#748c94",
-                }}
+              <Feather
+                name="users"
+                size={20}
+                color={focused ? "#FF5722" : "black"}
               />
               <Text style={{ fontSize: 11 }}>{"Users"}</Text>
             </View>
@@ -173,14 +165,10 @@ export function HomeTabs({ navigation }) {
                 top: 3,
               }}
             >
-              <Image
-                source={require("../assets/settings2.png")}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#E5C89A" : "#748c94",
-                }}
+              <Feather
+                name="settings"
+                size={20}
+                color={focused ? "#FF5722" : "black"}
               />
               <Text style={{ fontSize: 11 }}>{"Settings"}</Text>
             </View>

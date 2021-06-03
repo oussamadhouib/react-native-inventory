@@ -65,54 +65,10 @@ function HomeScreen({ navigation }) {
     ],
   };
 
-  let state2 = {
-    New_data: [
-      {
-        name: "Rolex",
-        model: "Rolex Daytona",
-        ref: "1",
-        photo:
-          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
-      },
-      {
-        name: "Richard Mille",
-        model: "RM 035",
-        ref: "5",
-        photo:
-          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__image 1-3184.png",
-      },
-      {
-        name: "Rolex",
-        model: "Rolex Daytona",
-        ref: "2",
-        photo:
-          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__5ef435f2128bf3c6a1e3f2f3_mask 1-5b5a.jpeg",
-      },
-      {
-        name: "Richard Mille",
-        model: "RM 035",
-        ref: "3",
-        photo:
-          "https://api-elita-staging.cyberdivision-test.xyz/api/media/Large__image 1-3184.png",
-      },
-    ],
-  };
-
   return (
     <View style={styles.container}>
       <Header />
-      {/* <View>
-        <Text>Newest</Text>
-        <FlatList
-          horizontal={true}
-          style={{ flex: 1 }}
-          data={state2.New_data}
-          renderItem={({ item }) => (
-            <Featured item={item} navigation={navigation} />
-          )}
-          keyExtractor={(item) => item.ref}
-        />
-      </View> */}
+
       <View
         style={{
           flexDirection: "row",
@@ -125,7 +81,7 @@ function HomeScreen({ navigation }) {
         <View
           style={{
             margin: 10,
-            backgroundColor: "#E5C89A",
+            backgroundColor: "#ECECEC",
             width: 75,
             height: 30,
             alignItems: "center",
@@ -138,7 +94,7 @@ function HomeScreen({ navigation }) {
         <View
           style={{
             margin: 10,
-            backgroundColor: "#E5C89A",
+            backgroundColor: "#ECECEC",
             width: 75,
             height: 30,
             alignItems: "center",
@@ -151,7 +107,7 @@ function HomeScreen({ navigation }) {
         <View
           style={{
             margin: 10,
-            backgroundColor: "#E5C89A",
+            backgroundColor: "#ECECEC",
             width: 75,
             height: 30,
             alignItems: "center",
@@ -164,6 +120,7 @@ function HomeScreen({ navigation }) {
       </View>
       <FlatList
         style={{ flex: 1 }}
+        numColumns={2}
         data={state.data}
         renderItem={({ item }) => <Item item={item} navigation={navigation} />}
         keyExtractor={(item) => item.ref}

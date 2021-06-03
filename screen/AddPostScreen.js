@@ -53,10 +53,10 @@ function AddPostScreen({ navigation }) {
         />
       </TouchableOpacity>
       <ProgressSteps
-        activeStepIconBorderColor="#E5C89A"
-        completedProgressBarColor="#E5C89A"
-        completedStepIconColor="#E5C89A"
-        activeLabelColor="#E5C89A"
+        activeStepIconBorderColor="#FF5722"
+        completedProgressBarColor="#FF5722"
+        completedStepIconColor="#FF5722"
+        activeLabelColor="#FF5722"
       >
         <ProgressStep
           label="Product"
@@ -159,7 +159,7 @@ function AddPostScreen({ navigation }) {
             <Text>Display Photos</Text>
             <TouchableOpacity
               style={{
-                backgroundColor: "#E5C89A",
+                backgroundColor: "#FF5722",
                 width: 120,
                 height: 40,
                 borderRadius: 15,
