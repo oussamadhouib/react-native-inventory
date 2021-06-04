@@ -41,6 +41,7 @@ export function Item({ item, navigation }) {
           style={{
             marginTop: 5,
           }}
+          onPress={() => navigation.navigate("viewProduct")}
         >
           $ 200,000 USD
         </Text>
@@ -74,5 +75,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 5,
     elevation: 3,
+    borderRadius: 20,
   },
 });
