@@ -1,7 +1,18 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Dimensions,
+} from "react-native";
 import Constants from "expo-constants";
-import { AntDesign, Feather } from "@expo/vector-icons";
+import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 function ViewProductScreen() {
   return (
@@ -11,199 +22,216 @@ function ViewProductScreen() {
         justifyContent: "center",
       }}
     >
-      <View
-        style={{
-          marginTop: Constants.statusBarHeight,
-          backgroundColor: "white",
-          height: 70,
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "row",
-          position: "absolute",
-          width: "100%",
-          top: 0,
-          zIndex: 1,
-        }}
-      >
-        <AntDesign
-          name="left"
-          size={24}
-          color="black"
-          style={{
-            left: 15,
-            position: "absolute",
-          }}
-        />
-        <Feather name="more-horizontal" size={24} color="black" />
-      </View>
-      <View
-        style={{
-          width: 300,
-          backgroundColor: "red",
-          marginVertical: 50,
-          top: 40,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          // source={{ uri: item.photo }}
-          source={require("../assets/watch.jpg")}
-          style={{
-            height: 200,
-            width: "60%",
-            borderRadius: 50,
-            marginVertical: 10,
-          }}
-        />
+      <StatusBar style="dark" backgroundColor="#F7F5F3" />
+      <ScrollView>
         <View
           style={{
-            // backgroundColor: "red",
-            height: 40,
-            width: "80%",
+            marginTop: Constants.statusBarHeight,
+            backgroundColor: "#F7F5F3",
+            height: 70,
+            width: "100%",
+            paddingHorizontal: 20,
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "row",
-            marginVertical: 20,
+            display: "flex",
+            position: "absolute",
+            justifyContent: "space-between",
+            width: "100%",
+            top: 0,
+            zIndex: 1,
           }}
         >
-          <Image
-            // source={{ uri: item.photo }}
-            source={require("../assets/watch.jpg")}
-            style={{
-              height: 50,
-              width: 50,
-              borderRadius: 10,
-              margin: 3,
-            }}
-          />
-          <Image
-            // source={{ uri: item.photo }}
-            source={require("../assets/watch.jpg")}
-            style={{
-              height: 50,
-              width: 50,
-              borderRadius: 10,
-              margin: 3,
-            }}
-          />
-          <Image
-            // source={{ uri: item.photo }}
-            source={require("../assets/watch.jpg")}
-            style={{
-              height: 50,
-              width: 50,
-              borderRadius: 10,
-              margin: 3,
-            }}
-          />
-          <Image
-            // source={{ uri: item.photo }}
-            source={require("../assets/watch.jpg")}
-            style={{
-              height: 50,
-              width: 50,
-              borderRadius: 10,
-              margin: 3,
-            }}
-          />
-          <Image
-            // source={{ uri: item.photo }}
-            source={require("../assets/watch.jpg")}
-            style={{
-              height: 50,
-              width: 50,
-              borderRadius: 10,
-              margin: 3,
-            }}
-          />
+          <AntDesign name="left" size={24} color="black" />
+          <Feather name="more-horizontal" size={24} color="black" />
+          <AntDesign name="heart" size={24} color="black" />
         </View>
-      </View>
 
-      <View
-        style={{
-          width: "100%",
-          backgroundColor: "white",
-          marginVertical: 10,
-        }}
-      >
         <View
           style={{
-            flexDirection: "row",
+            width: windowWidth,
+            marginVertical: 50,
+            top: 15,
             alignItems: "center",
-            // backgroundColor: "red",
+            justifyContent: "center",
+            backgroundColor: "white",
+            // paddingVertical: 10,
           }}
         >
           <View
             style={{
-              margin: 20,
-              width: 200,
-              // backgroundColor: "red",
+              width: windowWidth,
+              height: 300,
+
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row",
+              backgroundColor: "#F7F5F3",
+              // paddingVertical: 10,
+            }}
+          >
+            <AntDesign name="left" size={20} color="black" />
+            <Image
+              // source={{ uri: item.photo }}
+              source={require("../assets/watch-test.png")}
+              style={{
+                height: 200,
+                width: "60%",
+                borderRadius: 45,
+              }}
+            />
+            <AntDesign name="right" size={20} color="black" />
+          </View>
+          <View
+            style={{
+              width: "100%",
+              height: windowHeight,
+              top: -30,
+              // alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 40,
+              backgroundColor: "white",
+              display: "flex",
+              paddingHorizontal: 20,
+              // paddingVertical: 10,
             }}
           >
             <Text
               style={{
+                marginTop: -300,
+                color: "#FF5722",
                 fontWeight: "bold",
-                fontSize: 15,
-                marginVertical: 5,
+                fontSize: 24,
+                marginBottom: 8,
               }}
             >
-              Richard Mille
+              Rolex Daytona
             </Text>
-            <Text>RM 035</Text>
+            <Text
+              style={{
+                fontSize: 20,
+                marginBottom: 8,
+              }}
+            >
+              $40,000 USD
+            </Text>
+            <Text
+              style={{
+                marginBottom: 8,
+              }}
+            >
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting
+            </Text>
+            <View
+              style={{
+                width: windowWidth,
+                marginBottom: 8,
+                flexDirection: "row",
+              }}
+            >
+              <Text
+                style={{
+                  marginRight: 20,
+                  fontWeight: "bold",
+                }}
+              >
+                Model
+              </Text>
+              <Text>Daytona 1340sick</Text>
+            </View>
+            <View
+              style={{
+                width: windowWidth,
+                marginBottom: 8,
+                flexDirection: "row",
+              }}
+            >
+              <Text
+                style={{
+                  marginRight: 20,
+                  fontWeight: "bold",
+                }}
+              >
+                Model
+              </Text>
+              <Text>Daytona 1340sick</Text>
+            </View>
+            <View
+              style={{
+                width: windowWidth,
+                marginBottom: 8,
+                flexDirection: "row",
+              }}
+            >
+              <Text
+                style={{
+                  marginRight: 20,
+                  fontWeight: "bold",
+                }}
+              >
+                Model
+              </Text>
+              <Text>Daytona 1340sick</Text>
+            </View>
+            <View
+              style={{
+                width: windowWidth,
+                marginBottom: 8,
+                flexDirection: "row",
+              }}
+            >
+              <Text
+                style={{
+                  marginRight: 20,
+                  fontWeight: "bold",
+                }}
+              >
+                Model
+              </Text>
+              <Text>Daytona 1340sick</Text>
+            </View>
+            <View
+              style={{
+                width: windowWidth,
+                marginBottom: 8,
+                flexDirection: "row",
+              }}
+            >
+              <Text
+                style={{
+                  marginRight: 20,
+                  fontWeight: "bold",
+                }}
+              >
+                Model
+              </Text>
+              <Text>Daytona 1340sick</Text>
+            </View>
+            <View
+              style={{
+                width: windowWidth,
+
+                flexDirection: "row",
+              }}
+            >
+              <MaterialCommunityIcons
+                name="map-marker-radius"
+                size={20}
+                color="black"
+                style={{
+                  marginRight: 20,
+                }}
+              />
+              <Text>melbourne, australia</Text>
+            </View>
           </View>
-          <Text
-            style={{
-              fontSize: 18,
-            }}
-          >
-            $ 200,000 USD
-          </Text>
         </View>
-      </View>
-      {/* carte */}
-      <View
-        style={{
-          // margin: 20,
-          width: "100%",
-          backgroundColor: "white",
-          display: "flex",
-          // justifyContent: "space-around",
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            paddingVertical: 20,
-            position: "relative",
-            paddingHorizontal: 20,
-
-            // backgroundColor: "red",
-          }}
-        >
-          <Text
-            style={{
-              fontWeight: "bold",
-            }}
-          >
-            Refrerence
-          </Text>
-          <Text
-            style={{
-              fontSize: 15,
-              position: "absolute",
-              // justifyContent: "flex-end",
-              right: 0,
-
-              // marginLeft: "30%",
-            }}
-          >
-            15500ST.OO.1220ST.04
-          </Text>
-        </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }

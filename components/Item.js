@@ -15,7 +15,7 @@ export function Item({ item, navigation }) {
     <View style={styles.listItem}>
       <Image
         // source={{ uri: item.photo }}
-        source={require("../assets/watch.jpg")}
+        source={require("../assets/watch-test.png")}
         style={{
           width: "60%",
           height: 80,
